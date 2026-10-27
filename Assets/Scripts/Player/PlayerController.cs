@@ -3,6 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] private float jumpForce = 4f;
+
     private CharacterController characterController;
 
     private void Awake()
