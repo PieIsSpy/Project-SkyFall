@@ -10,6 +10,11 @@ public class Entity : MonoBehaviour
     private int currentDamage;
     // private Effect[] currentEffects;
 
+    private void Awake()
+    {
+        ResetStats();
+    }
+
     private void TakeDamage(int damage)
     {
         currentHealth = Math.Max(currentHealth - damage, 0);
