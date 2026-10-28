@@ -392,6 +392,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 761621377}
+  - component: {fileID: 761621378}
+  - component: {fileID: 761621379}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -415,6 +417,34 @@ Transform:
   - {fileID: 1851116409}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &761621378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761621376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1477b1df1e18841b829fb2ef65138f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity
+  maxHealth: 100
+  baseDamage: 1
+--- !u!114 &761621379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761621376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c81195592bbb84ca2ee28605c7bb4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityController
+  movementSpeed: 7
+  jumpForce: 4
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
