@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -6,8 +7,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float movementSpeed = 10f;
     [SerializeField] float jumpForce = 5f;
     [SerializeField] GameObject player;
+    [SerializeField] InputActionReference move;
+    
     private Rigidbody rb;
     private bool grounded;
+    private Vector2 moveDirection;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,25 +19,25 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    private void HorizontalInput()
+    {
+        moveDirection = move.action.ReadValue<Vector2>();
+    }
+
+    private void HorizontalMovement()
+    {
+        rb.linearVelocity = new Vector3(moveDirection.x * movementSpeed, moveDirection.y * movementSpeed, 0);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        float x_direction = Input.GetAxisRaw("Horizontal");
+        HorizontalInput();
+    }
 
-        if (Mathf.Abs(rb.linearVelocity.x) < 8)
-        {
-            rb.linearVelocity = new Vector3(x_direction * movementSpeed, rb.linearVelocity.y, 0);
-        }
-
-        if (Input.GetButton("Jump") == true && grounded == true)
-        {
-            rb.AddRelativeForce(Vector3.up * jumpForce);
-        }
-
-        if (!grounded)
-        {
-            rb.AddRelativeForce(100 * Time.deltaTime * Vector3.down);
-        }
+    private void FixedUpdate()
+    {
+        HorizontalMovement();
     }
 
     private void OnCollisionEnter (Collision collision)
