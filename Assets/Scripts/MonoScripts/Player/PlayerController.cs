@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         if (!context.started) return;
         if (!controller.isGrounded) return;
 
-        velocity += jumpForce;
+        velocity += currentJump;
     }
 
     private void ApplyMovement()
