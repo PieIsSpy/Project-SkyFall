@@ -39,6 +39,14 @@ public class PlayerController : MonoBehaviour
         direction = new Vector3(moveInput.x, 0, 0);
     }
 
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+        if (!controller.isGrounded) return;
+
+        velocity += jumpForce;
+    }
+
     private void ApplyMovement()
     {
         controller.Move(currentSpeed * Time.deltaTime * direction);
@@ -54,7 +62,7 @@ public class PlayerController : MonoBehaviour
         {
             velocity += gravity * gravityMultiplier * Time.deltaTime;
         }
-        
+
         direction.y = velocity;
     }
 

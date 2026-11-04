@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   movementSpeed: 10
-  jumpForce: 5
+  jumpForce: 2
   gravityMultiplier: 0.2
 --- !u!143 &1117632736
 CharacterController:
@@ -828,6 +828,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c1e6cef3-89e1-42f6-8283-fe2a4da2e625
     m_ActionName: Gameplay/AltFire
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1117632735}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dd5c6fc1-a34c-4c39-b91b-1a21d131e1ed
+    m_ActionName: 'Gameplay/Jump[/Keyboard/w]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Gameplay
