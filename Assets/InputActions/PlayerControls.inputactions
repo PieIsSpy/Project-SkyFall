@@ -25,6 +25,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Crouch",
+                    "type": "Button",
+                    "id": "b0370be3-5449-4244-a292-a03c942c6e34",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Fire",
                     "type": "Button",
                     "id": "f5a18ba7-b5c0-4905-8cfa-273d8682cbd9",
@@ -118,6 +127,17 @@
                     "processors": "",
                     "groups": ";Keyboard",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88c5682f-1baa-4b5c-bba7-1383d2f32af9",
+                    "path": "<Keyboard>/s",
+                    "interactions": "Press,MultiTap",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -45,6 +46,21 @@ public class PlayerController : MonoBehaviour
         if (!controller.isGrounded) return;
 
         velocity += currentJump;
+    }
+
+    public void Crouch(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (context.interaction is MultiTapInteraction)
+            {
+                print("fall off the platform");
+            }
+            else
+            {
+                print("crouching");
+            }
+        }
     }
 
     private void ApplyMovement()
