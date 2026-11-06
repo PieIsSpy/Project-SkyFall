@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private float velocity;
 
     float timeSinceLastCrouch = 0f;
+    bool platformFallTriggered = false;
 
     private void Awake()
     {
@@ -54,13 +55,15 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             float now = Time.time;
-            if (now - timeSinceLastCrouch < 0.2)
+            if ((now - timeSinceLastCrouch < 0.2) && !platformFallTriggered)
             {
                 print("fall through platform");
+                platformFallTriggered = true;
             }
             else
             {
                 print("crouching");
+                platformFallTriggered = false;
             }
             timeSinceLastCrouch = now;
         }
