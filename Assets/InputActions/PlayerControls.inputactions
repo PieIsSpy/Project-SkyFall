@@ -134,7 +134,7 @@
                     "name": "",
                     "id": "88c5682f-1baa-4b5c-bba7-1383d2f32af9",
                     "path": "<Keyboard>/s",
-                    "interactions": "Press,MultiTap",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": ";Keyboard",
                     "action": "Crouch",

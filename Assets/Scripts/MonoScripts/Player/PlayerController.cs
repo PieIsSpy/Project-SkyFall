@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Interactions;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -21,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private readonly float gravity = -9.81f;
     private float velocity;
+
+    float timeSinceLastCrouch = 0f;
 
     private void Awake()
     {
@@ -52,14 +53,16 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            if (context.interaction is MultiTapInteraction)
+            float now = Time.time;
+            if (now - timeSinceLastCrouch < 0.2)
             {
-                print("fall off the platform");
+                print("fall through platform");
             }
             else
             {
                 print("crouching");
             }
+            timeSinceLastCrouch = now;
         }
     }
 
